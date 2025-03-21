@@ -80,7 +80,10 @@ const config: Config = {
           position: 'left',
           label: 'Physics',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '#', label: 'Math', position: 'left' },
+        { to: '#', label: 'Geometry', position: 'left' },
+        { to: '#', label: 'History', position: 'left' },
+        { to: '#', label: 'Programming', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
