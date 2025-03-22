@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkedu_magnetism_game=self.webpackChunkedu_magnetism_game||[]).push([[9647],{8122:(e,s,a)=>{a.r(s),a.d(s,{default:()=>m});a(6540);var r=a(4164),u=a(1082),n=a(204),t=a(2831),c=a(1410),d=a(4848);function m(e){return(0,d.jsx)(u.e3,{className:(0,r.A)(n.G.wrapper.docsPages),children:(0,d.jsx)(c.A,{children:(0,t.v)(e.route.routes)})})}}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkedu_magnetism_game=self.webpackChunkedu_magnetism_game||[]).push([[1235],{8552:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-pages","id":"default"}')}}]);

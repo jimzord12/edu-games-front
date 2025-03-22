@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkedu_magnetism_game=self.webpackChunkedu_magnetism_game||[]).push([[1903],{1912:e=>{e.exports=JSON.parse('{"blogBasePath":"/edu-games-front/blog","blogTitle":"Blog","authorsListPath":"/edu-games-front/blog/authors"}')}}]);
