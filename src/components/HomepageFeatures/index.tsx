@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -11,38 +11,42 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Easy to Use & User-friendly',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Science4All was designed to be easily used by everyone, even those who
+        are not developers. Just select a Science category from the navigation
+        bar and start learning!
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Fun & Engaging',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Science4All lets you focus on what's truly matters. It is evident that
+        people learn far easier, quicker and more efficiently when they are
+        having fun. Science4All is a platform that makes learning fun and
+        enjoyable.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Built with React',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Science4All is built with React, a powerful JavaScript library for
+        building user interfaces. This means that you can easily extend and
+        customize the platform to suit your needs.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

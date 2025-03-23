@@ -99,8 +99,10 @@ const config: Config = {
         },
         { to: '#', label: '⏳ Math', position: 'left' },
         { to: '#', label: '⏳ Geometry', position: 'left' },
+        { to: '#', label: '⏳ Chemistry', position: 'left' },
         { to: '#', label: '⏳ History', position: 'left' },
-        { to: '#', label: '⏳ Programming', position: 'left' },
+        { to: '#', label: '⏳ Computer Science', position: 'left' },
+        { to: '#', label: '⏳ Engineering', position: 'left' },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',

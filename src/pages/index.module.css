@@ -21,3 +21,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.bodyText {
+  margin-top: 3rem;
+  font-size: large;
+  font-weight: 400;
+}
+
+.underline {
+  text-decoration: underline;
+  font-weight: 500;
+}
