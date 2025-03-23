@@ -27,7 +27,7 @@ Even though we **can’t see magnetic fields**, we can observe their effects in 
 
 Try this: Take a **compass** and place it near a magnet—watch the needle move! 🧭
 
-<YouTube videoId="KTk7Yjo_v-A" />
+<YouTube videoId="NWUgK8W-4JM" />
 
 ## The Earth's Giant Magnet 🌍
 
@@ -129,27 +129,6 @@ Many computers and older devices **store data** using **magnetic disks**.
 
 - Traditional **hard drives (HDDs)** have spinning disks covered in magnetic material.
 - A small magnet inside the drive **writes and reads data** in tiny sections.
-
-**6️⃣ Speakers & Headphones 🎧 – Producing Sound**
-
-Most **speakers and headphones** contain **magnets** to help create sound.
-
-- Inside a speaker, a **magnet moves a coil** attached to a diaphragm.
-- The movement creates **sound waves** that we hear!
-
-**7️⃣ Magnetic Therapy 🏥 – Health & Medicine**
-
-Some people believe that magnets **help with pain relief** and circulation.
-
-- **Magnetic bracelets** are sometimes worn for health benefits.
-- **Magnetic mattresses and insoles** claim to improve sleep and relaxation.
-
-**8️⃣ Animal Navigation 🦅 – Nature’s GPS**
-
-Many animals **sense Earth’s magnetic field** and use it to navigate:
-
-- **Birds, turtles, and bees** use magnetic fields to find their way home.
-- Scientists believe tiny magnetic particles in their bodies **act like a built-in compass**!
 
 <YouTube videoId="JGuP8MglHI4" />
 
