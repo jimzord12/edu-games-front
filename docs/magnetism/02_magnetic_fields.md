@@ -1,5 +1,6 @@
 ---
 title: 'Magnetic Fields'
+description: 'Discover the fascinating world of magnetic fields.'
 sidebar_position: 2
 ---
 
