@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkedu_magnetism_game=self.webpackChunkedu_magnetism_game||[]).push([[9570],{9570:(n,e,m)=>{m.d(e,{checkWinCondition:()=>s});const s=(n,e)=>{const m=n.bounds,s=e.bounds,a=(m.max.x+m.min.x)/2,i=(m.max.y+m.min.y)/2,t=a-(s.max.x+s.min.x)/2,u=i-(s.max.y+s.min.y)/2;return Math.sqrt(t*t+u*u)<1.5*n.circleRadius}}}]);

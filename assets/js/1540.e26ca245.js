@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkedu_magnetism_game=self.webpackChunkedu_magnetism_game||[]).push([[1540],{1540:(e,i,r)=>{r.d(i,{createIronBall:()=>c});var t=r(2046);const c=(e,i,r,c,n)=>{const s=t.Bodies.circle(r,c,n,{restitution:.6,friction:.1,frictionAir:.01,render:{fillStyle:"#777777"}});return s.isMagnetic=!0,s.circleRadius=n,t.World.add(i,s),s}}}]);
