@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import p5 from 'p5';
-import Matter from 'matter-js';
 import { Engine, World, Bodies, Body, Mouse, MouseConstraint } from 'matter-js';
 import { createMagnet } from './components/Magnet';
 import { createIronBall } from './components/IronBall';
@@ -8,6 +7,8 @@ import { createMaze } from './components/Maze';
 import { applyMagneticForces } from './physics/magneticForces';
 import { checkWinCondition } from './gameLogic/winCondition';
 import { renderUI } from './ui/gameUI';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { startGame, endGame } from '../../store/gameSlice';
 
 type Props = {
   canvasW: number;
@@ -16,12 +17,63 @@ type Props = {
 
 const MagnetsGame = ({ canvasW, canvasH }: Props) => {
   const canvasRef = useRef<HTMLDivElement>(null);
-  const [gameState, setGameState] = useState({
+  const p5InstanceRef = useRef<p5 | null>(null);
+  const gameInstanceRef = useRef<{
+    isPlaying: boolean;
+    gameWon: boolean;
+    ironBall: any;
+    startTime: number;
+    engine: any;
+  }>({
     isPlaying: false,
-    score: 0,
-    timeElapsed: 0,
     gameWon: false,
+    ironBall: null,
+    startTime: 0,
+    engine: null,
   });
+  
+  const dispatch = useAppDispatch();
+  const gameState = useAppSelector((state) => state.game);
+
+  // Handle key presses at React level
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    const gameInstance = gameInstanceRef.current;
+    
+    // Start game when Enter is pressed
+    if (e.key === 'Enter' && !gameInstance.isPlaying) {
+      console.log('Start game via React handler');
+      gameInstance.isPlaying = true;
+      gameInstance.startTime = Date.now();
+      
+      // Update Redux state
+      dispatch(startGame());
+    }
+    
+    // Restart game when R is pressed
+    if ((e.key === 'r' || e.key === 'R') && gameInstance.gameWon) {
+      gameInstance.isPlaying = true;
+      gameInstance.gameWon = false;
+      gameInstance.startTime = Date.now();
+      
+      // Reset ball position if available
+      if (gameInstance.ironBall) {
+        Body.setPosition(gameInstance.ironBall, { x: canvasW / 2, y: canvasH / 2 });
+        Body.setVelocity(gameInstance.ironBall, { x: 0, y: 0 });
+      }
+      
+      dispatch(startGame());
+    }
+  }, [dispatch, canvasW, canvasH]);
+
+  useEffect(() => {
+    // Add event listener for key presses
+    window.addEventListener('keydown', handleKeyDown);
+    
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   useEffect(() => {
     if (canvasRef.current === null) return;
@@ -41,8 +93,6 @@ const MagnetsGame = ({ canvasW, canvasH }: Props) => {
 
       // Game state
       let startTime = 0;
-      let isPlaying = false;
-      let gameWon = false;
 
       p.setup = () => {
         p.createCanvas(canvasW, canvasH);
@@ -82,31 +132,23 @@ const MagnetsGame = ({ canvasW, canvasH }: Props) => {
 
         World.add(world, [exit, mouseConstraint]);
 
-        // Start the game
+        // Initialize start time but don't start the game yet
         startTime = p.millis();
-        isPlaying = true;
-        setGameState((prev) => ({ ...prev, isPlaying: true }));
+        
+        // Store references in the ref for access from React
+        gameInstanceRef.current = {
+          isPlaying: false, // Start paused
+          gameWon: false,
+          ironBall,
+          startTime,
+          engine,
+        };
       };
 
       p.draw = () => {
-        // Update physics
-        Engine.update(engine);
-
-        // Apply magnetic forces
-        if (isPlaying && !gameWon) {
-          applyMagneticForces(ironBall, magnets, world);
-
-          // Check win condition
-          if (checkWinCondition(ironBall, exit)) {
-            gameWon = true;
-            const finalTime = (p.millis() - startTime) / 1000;
-            setGameState((prev) => ({
-              ...prev,
-              gameWon: true,
-              timeElapsed: finalTime,
-              score: Math.max(1000 - Math.floor(finalTime) * 10, 100),
-            }));
-          }
+        // Update physics only if game is playing
+        if (gameState.isPlaying && !gameState.gameWon) {
+          Engine.update(engine);
         }
 
         // Render game
@@ -182,16 +224,70 @@ const MagnetsGame = ({ canvasW, canvasH }: Props) => {
           p.pop();
         });
 
-        // Render UI
-        renderUI(p, gameState);
+        // Apply magnetic forces if game is playing
+        if (gameState.isPlaying && !gameState.gameWon) {
+          applyMagneticForces(ironBall, magnets, world);
+
+          // Check win condition
+          if (checkWinCondition(ironBall, exit)) {
+            const finalTime = (p.millis() - startTime) / 1000;
+            dispatch(
+              endGame({
+                score: Math.max(1000 - Math.floor(finalTime) * 10, 100),
+                timeElapsed: finalTime,
+              })
+            );
+          }
+        }
+
+        // Create a custom game state for UI rendering that includes the current time
+        const uiGameState = {
+          ...gameState,
+          // Calculate elapsed time based on the stored start time
+          timeElapsed: gameState.isPlaying && !gameState.gameWon
+            ? (p.millis() - startTime) / 1000 
+            : gameState.timeElapsed
+        };
+
+        // Render UI with the combined state
+        renderUI(p, uiGameState);
       };
     };
 
     const p5Instance = new p5(sketch, canvasRef.current);
-    return () => p5Instance.remove();
-  }, [canvasW, canvasH]);
+    p5InstanceRef.current = p5Instance;
+    
+    return () => {
+      p5Instance.remove();
+      p5InstanceRef.current = null;
+    };
+  }, [canvasW, canvasH, dispatch, gameState]);
 
-  return <div ref={canvasRef} />;
+  // Add this inside your component, before the return statement
+  // This useEffect will run whenever the Redux state changes
+  useEffect(() => {
+    // Update the game instance ref with the latest Redux state
+    if (gameInstanceRef.current) {
+      // Only update if the values are different to avoid unnecessary re-renders
+      if (gameInstanceRef.current.isPlaying !== gameState.isPlaying) {
+        console.log('Syncing Redux isPlaying state to p5:', gameState.isPlaying);
+        gameInstanceRef.current.isPlaying = gameState.isPlaying;
+      }
+      
+      if (gameInstanceRef.current.gameWon !== gameState.gameWon) {
+        console.log('Syncing Redux gameWon state to p5:', gameState.gameWon);
+        gameInstanceRef.current.gameWon = gameState.gameWon;
+      }
+    }
+  }, [gameState]);
+
+  return (
+    <div 
+      ref={canvasRef} 
+      tabIndex={0}
+      style={{ outline: 'none' }}
+    />
+  );
 };
 
 export default MagnetsGame;
