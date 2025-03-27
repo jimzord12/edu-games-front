@@ -4,7 +4,7 @@ description: 'Discover the fascinating world of magnetic fields.'
 sidebar_position: 2
 ---
 
-import YouTube from '@site/src/components/YouTube';
+import Youtube from '@site/src/components/Youtube';
 
 # Magnetism: Magnetic Fields
 
@@ -16,7 +16,7 @@ Imagine holding two magnets close together. Sometimes they **snap together**, an
 
 A **magnetic field always flows from the North Pole (N) to the South Pole (S) of a magnet**.
 
-<YouTube videoId="SCnGfE7qxHc" />
+<Youtube videoId="SCnGfE7qxHc" />
 
 ## How Do We See a Magnetic Field? 👀
 
@@ -27,7 +27,7 @@ Even though we **can’t see magnetic fields**, we can observe their effects in 
 
 Try this: Take a **compass** and place it near a magnet—watch the needle move! 🧭
 
-<YouTube videoId="NWUgK8W-4JM" />
+<Youtube videoId="NWUgK8W-4JM" />
 
 ## The Earth's Giant Magnet 🌍
 
@@ -37,7 +37,7 @@ Deep inside our planet, there is hot, liquid metal moving around, creating a **m
 
 A compass 🧭 has a small magnet inside, and it always points **North** because it follows Earth’s magnetic field.
 
-<YouTube videoId="OsQNHFlF8w4" />
+<Youtube videoId="OsQNHFlF8w4" />
 
 ## How Magnetic Fields Are Created 🔄
 
@@ -53,7 +53,7 @@ When **electricity flows through a wire**, it creates a magnetic field around it
 
 Try this: Wrap a wire around a nail, connect it to a battery, and **BOOM!** You just made an electromagnet! 🏗️🔩
 
-<YouTube videoId="hFAOXdXZ5TM" />
+<Youtube videoId="hFAOXdXZ5TM" />
 
 ## 4 Key Properties of Magnetic Fields 🧲✨
 
@@ -130,7 +130,7 @@ Many computers and older devices **store data** using **magnetic disks**.
 - Traditional **hard drives (HDDs)** have spinning disks covered in magnetic material.
 - A small magnet inside the drive **writes and reads data** in tiny sections.
 
-<YouTube videoId="JGuP8MglHI4" />
+<Youtube videoId="JGuP8MglHI4" />
 
 ## Fun Experiments to Try at Home 🧪
 

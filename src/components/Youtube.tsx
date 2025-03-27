@@ -4,15 +4,15 @@ type Props = {
   videoId: number;
 };
 
-const YouTube = ({ videoId }: Props) => (
+const Youtube = ({ videoId }: Props) => (
   <iframe
     width="560"
     height="315"
     src={`https://www.youtube.com/embed/${videoId}`}
-    title="YouTube video player"
+    title="Youtube video player"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
   ></iframe>
 );
 
-export default YouTube;
+export default Youtube;

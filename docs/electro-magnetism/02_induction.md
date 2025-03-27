@@ -4,7 +4,7 @@ sidebar_label: 'Electromagnetic Induction'
 sidebar_position: 2
 ---
 
-import YouTube from '@site/src/components/YouTube';
+import Youtube from '@site/src/components/Youtube';
 
 # Electromagnetic Induction ⚡
 
@@ -43,7 +43,7 @@ Where:
 - $ A $ is the area of the loop (m²),
 - $ \theta $ is the angle between the field and the normal to the loop.
 
-<YouTube videoId="pQp6bmJPU_0" />
+<Youtube videoId="pQp6bmJPU_0" />
 
 ## 🔄 Understanding Magnetic Flux
 
@@ -59,7 +59,7 @@ Where:
 
 3. **If the surface is tilted** at an angle, only a portion of the field passes through, reducing the flux.
 
-<YouTube videoId="6T7aG3Gd_38" />
+<Youtube videoId="6T7aG3Gd_38" />
 
 🎯 **Simple Analogy with wind 💨**
 
@@ -87,7 +87,7 @@ To determine the **direction** of induced current:
 2. Curl your **fingers** in the direction of the motion.
 3. Your **palm** points in the direction of the induced current.
 
-<YouTube videoId="3HyORmBip-w?start=276" />
+<Youtube videoId="3HyORmBip-w?start=276" />
 
 ## 🔋 Applications of Electromagnetic Induction
 
@@ -103,4 +103,4 @@ A transformer works on the principle of electromagnetic induction to step up or 
 
 Induction motors operate by inducing a current in the rotor without direct electrical contact, using a rotating magnetic field.
 
-<YouTube videoId="nllCgjlWAF4?start=147" />
+<Youtube videoId="nllCgjlWAF4?start=147" />
