@@ -1,29 +1,27 @@
 ---
-title: 'Mini Game'
+title: 'Mini Games'
 description: 'A fun mini game to test your knowledge of magnetism!'
 sidebar_position: 4
 ---
 
-import MagnetismGame from '@site/src/games/magnets/MagnetsGame';
+import MagnetGameLInk from '@site/src/components/MagnetGameLink';
 
-# Mini Game: Maze Escape 🧩
+# Mini Games 🧩
 
 ## Objective
 
-There 4 magnets, one for each direction (North, South, East, West). The objective of the game is to move the magnets in such a way to make the iron ball escape the maze. The magnets can be moved by clicking on them. The game is won when the ball reaches the exit.
+You need to place magnets in the right positions (_or drag the magnets depending on the level_) to guide the ball through the maze and reach the exit.
 
-## How to Play
+The ball will be affected by the magnetic fields created by the magnets, so you need to think carefully about where to place them.
 
-1. Click on a magnet to move it.
-2. Use the magnets to guide the ball through the maze.
-3. The game is won when the ball reaches the exit.
-4. Have fun and experiment with different magnet positions!
-5. Try to complete the maze in the shortest time possible!
-6. Share your score with friends and challenge them to beat it!
-7. Good luck!
+## Sadly the Game is not hosted online just yet! 😓
 
-## The Game
+But, you can download it from GitHub and run it locally!
 
-### The Game is under Development 😅
+Follow the instructions in the README file to set up the game on your local machine.
 
-<MagnetismGame canvasH={480} canvasW={800} />
+Here is the link to the repository:
+
+import Link from '@docusaurus/Link';
+
+<MagnetGameLInk />

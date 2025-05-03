@@ -29,7 +29,8 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",
@@ -58,5 +59,6 @@
   },
   "engines": {
     "node": ">=20.0"
-  }
+  },
+  "packageManager": "yarn@4.9.1"
 }

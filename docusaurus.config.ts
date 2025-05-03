@@ -8,6 +8,10 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
+  customFields: {
+    GITHUB_GAMES_REPO_URL: 'the-url-of-the-github-repo', // Replace with your games repo name
+  },
+
   title: 'Science for All',
   tagline: 'Learn through Animations & Interactive Games!',
   favicon: 'img/favicon.ico',
