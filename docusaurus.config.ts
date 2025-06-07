@@ -8,9 +8,9 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  customFields: {
-    GITHUB_GAMES_REPO_URL: 'the-url-of-the-github-repo', // Replace with your games repo name
-  },
+  // customFields: {
+  //   GITHUB_GAMES_REPO_URL: 'the-url-of-the-github-repo', // Replace with your games repo name
+  // },
 
   title: 'Science for All',
   tagline: 'Learn through Animations & Interactive Games!',
@@ -20,7 +20,7 @@ const config: Config = {
   url: 'https://github.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/edu-games-front/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
